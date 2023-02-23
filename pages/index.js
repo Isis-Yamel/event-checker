@@ -1,6 +1,9 @@
 import Head from "next/head";
+import { getFeaturedEvents } from "../dummy-data";
+import EventList from "@/components/events/EventList";
 
-export default function Home() {
+function HomePage() {
+  const featureEvents = getFeaturedEvents();
   return (
     <>
       <Head>
@@ -9,8 +12,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <h1>Home page</h1>
+        <EventList items={featureEvents} />
       </main>
     </>
   );
 }
+
+export default HomePage;
